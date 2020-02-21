@@ -1,0 +1,515 @@
+/*设置页面的基础样式*/
+     *{margin: 0px;padding: 0px;
+}
+     
+/*设置主体和头部*/
+body{
+	width:100%;
+	height: 100%;
+}
+
+head{
+	width: 100%;
+	height: 100%;
+}
+
+/*隐藏li的黑点*/
+li{
+	list-style: none;
+}
+
+/*取消a标签的装饰*/
+a{
+	text-decoration: none;
+}
+
+/*设置天猫头部div*/
+#header{
+width: 100%;
+line-height: 32px;
+height: 32px;
+background-color: #f2f2f2;
+font-size: 12px;
+border-bottom: 1px solid #e5e5e5;
+}
+
+/*设置下拉框的边界样式*/
+#header .triangle{
+border-style: solid;
+border-color: transparent;
+border-width: 0 1px 0 1px;
+}
+
+/*设置鼠标悬停时，框内样式*/
+#header .triangle:hover{
+background-color: #ffffff;
+border-color: #e5e5e5;
+cursor: pointer;
+}
+
+/*开头标签的a标签悬浮时文字变色*/
+#header a:hover{
+color: #FF0036;
+}
+
+/*同上，a标签样式*/
+#header .triangle:hover > a{
+text-decoration: underline;
+color: #FF0036;
+}
+
+/*三角形之后旋转*/
+#header .triangle::after{
+content: '';
+border-width: 3px;
+border-style: solid;
+border-top-color: #bbb;
+border-bottom-color: transparent;
+border-left-color: transparent;
+border-right-color: transparent;
+width: 0;
+position: absolute;
+right: 4px;
+top: 50%;
+margin-top: -2px;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none;
+transition: none;
+}
+
+/*悬浮之后旋转*/
+#header .triangle:hover::after{
+-webkit-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+-o-transform: rotate(180deg);
+transform: rotate(180deg);
+-webkit-transition: transform .5s ease;
+-moz-transition: transform .5s ease;
+-ms-transition: transform .5s ease;
+-o-transition: transform .5s ease;
+transition: transform .5s ease;
+    transform-origin: 3px 1.5px;
+    /*设置旋转的位置*/
+}
+
+/*子菜单样式*/
+#header .triangle:hover .submenu{
+display: block;
+}
+
+/*头部包装*/
+.wrapper{
+    width: 1230px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/*登录信息，左浮动*/
+#login-info{
+float: left;
+}
+
+/*开头a标签，登录信息，span的颜色*/
+#header a, #login-info span{
+color: #999;
+}
+
+/*购物车*/
+#header .icon-gouwuche-copy{
+font-size: 12px;
+color: #FF0036;
+}
+
+/*悬停时子菜单快显示*/
+#header .triangle:hover .submenu{
+display: block;
+}
+
+/*悬停时a标签文字装饰划线转换颜色*/
+#header .triangle:hover > a{
+text-decoration: underline;
+color: #FF0036;
+}
+
+/*设置快捷菜单，居左*/
+#quick-menu{
+float: right;
+}
+
+/*快捷菜单的a标签边距为0，自动对齐*/
+#quick-menu a{
+margin: 0 auto;
+}
+
+/*设置快捷菜单的菜单样式*/
+#quick-menu .menu{
+float: left;
+padding: 0 14px;
+text-align: center;
+position: relative;
+height: 32px;
+}
+
+
+
+/*快捷菜单的子菜单悬浮之后*/
+#quick-menu .submenu a:hover{
+text-decoration: underline;
+}
+
+
+
+/*快捷菜单的子菜单样式*/
+#quick-menu .submenu{
+position: absolute;
+top: 32px;
+left: -1px;
+width: 74px;
+border-style: solid;
+border-color: #e5e5e5;
+border-width: 0 1px 1px 1px;
+padding: 0 14px;
+display: none;
+z-index: 1;/*子菜单的引索是1，在快捷菜单前面显示*/
+background: #ffffff;
+}
+
+/*快捷菜单下滑*/
+#quick-menu .split{
+width: 1px;
+height: 14px;
+background: #ccc;
+padding: 0;
+margin: 9px 5px;
+}
+
+/*快捷菜单的二维码*/
+#quick-menu .qr-code{
+width:220px;
+height: 282px;
+border: 1px solid #e5e5e5;
+position: absolute;
+top: 28px;
+left: -58px;
+background: #fff;
+box-shadow: 0 0 5px #aaa;
+display: none;
+z-index: 1;
+}
+
+/*之后*/
+#quick-menu .qr-code::after{
+content: '';
+border-width: 5px;
+border-style: solid;
+border-color: transparent transparent #fff transparent;
+width: 0;
+height: 0;
+position: absolute;
+top: -10px;
+left: 85px;
+}
+
+/*菜单的手机悬停*/
+#quick-menu .mobile:hover .qr-code{
+display: block;
+}
+
+
+.iconfont {
+      width: 16.3px;
+      margin-left: 14px;
+      margin-top: 10px;
+      line-height: 36px;
+      color: black;
+}
+
+#quick-menu .wzdh{
+width: 1500px;
+height: 200px;
+border: 1px solid #e5e5e5;
+position: absolute;
+top: 32px;
+left: -1250px;
+background: #fff;
+box-shadow: 0 0 5px #aaa;
+display: none;
+z-index: 1;
+}
+
+#quick-menu .wzdh::after{
+content: '';
+border-width: 5px;
+border-style: solid;
+border-color: transparent transparent #fff transparent;
+width: 0;
+height: 0;
+position: absolute;
+top: -10px;
+left: 85px;
+}
+
+#quick-menu .menu:hover .wzdh{
+display: block;
+}
+
+/*搜索栏样式*/
+#Search{
+	background: white;
+	font-size: 12px;
+	width: 1330px;
+	height: 130px;
+	position: relative;
+}
+
+/*搜索框图片大小样式*/
+#Search img{
+    width: 240px;
+    height: 130px;
+    display: inline;
+    padding-left: 45px;
+}
+
+/*搜索框定位和样式*/
+.Search-list{
+	position: absolute;
+	width: 625px;
+	height: 100px;
+	left:50%;
+	top: 50%;
+	margin-left: -312.5px;/*左边距*/
+	margin-top: -50px;/*上边距*/
+}
+
+/*搜索框边界*/
+.Search-border{
+	position: relative;
+	width: 625px;
+	height: 40px;
+	left: 50%;
+	top: 50%;
+	margin-left: -312.5px;
+	margin-top: -20px;
+}
+
+/*搜索框的输入样式*/
+.Search-border input{
+    border: 2px solid #ff0036;
+    padding: 0;
+    width: 77%;
+    height: 40px;
+}
+
+/*搜索框的按钮样式*/
+.Search-border button{
+    border: 2px solid #ff0036;
+    width: 22%;
+    height: 44px;
+    border-bottom-width:6px;
+    background: #ff0036;color: white;
+    font-size: 18px;
+    font-weight:700;
+    letter-spacing: 5px;
+    padding: 0;
+}
+
+/*搜索栏li标签样式*/
+.Search-border li {
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 14px;
+    color: #999999;
+    float: left
+}
+
+/*搜索框a标签样式*/
+.Search-border a{
+    padding: 0 6px;
+    color: #999999;
+}
+
+/*顶部，左填充0*/
+#top{
+    padding-left: 0;
+}
+
+/*标题栏样式*/
+#list{
+    width: 100%;
+    height: 35px;
+    border-bottom: 2px solid #ff111a;
+}
+
+/*标题栏商品分类样式*/
+#list .Commodity-classification{
+    width: 200px;
+    height: 36px;
+    margin-left: 68px;
+    background: #ff0036;
+    font-size: 16px;
+}
+
+/*导航栏li标签样式*/
+#navigation li{
+	float:left;
+	height: 35px;
+	padding: 0 8px;
+	position: relative;
+}
+
+/*导航栏span标签样式*/
+#navigation span{
+    width: 64px;
+    height: 36px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 110px;
+    top: 6px;
+    color: white;
+}
+
+/*图片样式*/
+#navigation img{
+    width: 100px;
+    height: 30px;
+}
+
+/*填充顶部4px*/
+#navigation .center{
+   padding-top: 4px ;
+}
+
+/*a标签悬浮颜色*/
+#navigation a:hover{
+    color: #FF0036;
+}
+
+/*a标签颜色*/
+#navigation a{
+    color: #000;
+}
+
+/*背景图片样式*/
+#back-img{
+    background: #4c2efe url("../img/img5.webp") no-repeat center;/*无重复中心*/
+    position: relative;
+    height: 500px;
+}
+
+/*左导航栏样式*/
+#back-img .back-navigation .m-left{
+    margin-left: 76px;
+    width: 200px;
+    line-height: 32px;
+    font-size: 14px;
+    background: #e5e5e5;
+}
+
+/*导航li样式*/
+#back-img .m-left li{
+    height: 31.2px;
+    /*filter:alpha（opacity=80）;*/
+    /*opacity:0.8;*/
+}
+
+/*img头部和顶部位置和宽度*/
+#back-img .img-top,#back-img .img-bottom{
+    width: 220px;
+    position: absolute;
+}
+
+/*img头部样式*/
+.img-top{
+    top: 10px;
+    right: 50px;
+    background: white;
+    filter:alpha（opacity=80）;
+    opacity:0.8;
+}
+
+/*底部*/
+.img-bottom{
+    bottom: 10px;
+    right: 50px;
+    background: white;
+    filter:alpha（opacity=80）;
+    opacity:0.8;
+}
+
+/*导航栏a标签字体大小*/
+#back-img .back-navigation .m-left a{
+    font-size: 16px;
+}
+
+/*a标签悬浮时背景颜色*/
+#back-img .aa:hover{
+    background: #ffffff;
+    /*opacity:1;*/
+    /*filter:alpha（opacity=100);*/
+
+}
+
+/*a标签悬浮时样式*/
+#back-img .m-left .aa:hover>a{
+    color: #ff111a;
+    background: white;
+    text-decoration: underline;
+}
+
+/*右边样式*/
+#side-bar{
+    width: 35px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+}
+
+#side-bar .side-bar-tab{
+    position: relative;
+}
+#side-bar .icon-gouwuche-copy{
+    margin-top: 100px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+#side-bar .vip{
+    width: 90px;
+    height: 35px;
+    position: absolute;
+    background: black;
+    top: 0;
+    right: 100px;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+#side-bar .vip::after{
+    content: '';
+    border-style: solid ;
+    border-width:4px;
+    border-color: transparent transparent transparent #000000;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 14px;
+    left: 90px;
+}
+#side-bar .side-bar-tab:hover .vip{
+    opacity: 1;
+    right: 35px;
+}
+#side-bar .side-bar-tab:hover {
+    background: #ff111a;
+
